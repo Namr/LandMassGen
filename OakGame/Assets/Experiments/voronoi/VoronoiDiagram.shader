@@ -1,6 +1,6 @@
 ﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 
-Shader "AlanZucconi/Voronoi Diagram"
+Shader "Moussa/Voronoi Diagram"
 {
 	Properties
 	{
@@ -64,7 +64,7 @@ Shader "AlanZucconi/Voronoi Diagram"
 				int minI = 0;	// Index of min
 				for (int i = 0; i < _Length; i++)
 				{
-					half dist = distance_manhattan(output.worldPos.xy, _Points[i].xy);
+					half dist = distance_minkowski(output.worldPos.xy, _Points[i].xy);
 					
 					//draw mid point
 					if (dist < _Radius)
