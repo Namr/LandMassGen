@@ -25,8 +25,8 @@ Shader "Moussa/Voronoi Diagram"
 			uniform half _P;
 			uniform half _Radius;
 			uniform int _Length = 0;
-			uniform half2 _Points[500];
-			uniform fixed3 _Colors[500];
+			uniform half2 _Points[1000];
+			uniform fixed3 _Colors[1000];
 
 			sampler2D _HeatTex;
 

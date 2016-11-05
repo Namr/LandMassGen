@@ -31,8 +31,17 @@ public class VoronoiRandom : MonoBehaviour {
                 0,
                 0
             );;
-          
-            colours[i] = HSVToRGB( (1f / length) * i, 0.75f, 0.75f);
+            float sample = Mathf.PerlinNoise(points[i].x,points[i].y);
+            Debug.Log(sample.ToString());
+            if(sample > 0 && sample <= 0.5)
+            {
+                colours[i] = Color.blue;
+            }
+            else if(sample < 1 && sample > 0.5)
+            {
+                colours[i] = Color.green;
+            }
+            //colours[i] = HSVToRGB( (1f / length) * i, 0.75f, 0.75f);
 
             // Shader
             material.SetVectorArray("_Points", points);
